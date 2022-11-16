@@ -2,9 +2,9 @@ import React, {useState} from 'react';
 import {useOutletContext, useNavigate} from 'react-router-dom';
 
 const AddActivity = () => {
-  const [activityName, setActivityName] = useState("");
+  const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const {activitiesObj = [activities, setActivities]} = useOutletContext();
+  const {activitiesObj: [activities, setActivities]} = useOutletContext();
   const navigate = useNavigate();
 
   async function createNewActivity (event) {
@@ -23,9 +23,9 @@ const AddActivity = () => {
         })
       });
       const data = await response.json();
-      setActivities([...activities, data.data.activity])
+      setActivities([...activities, ])
       if (data.success){
-        navigate('/acitvities');
+        navigate('/activities');
       }
     } catch (error) {
       console.log(error);
@@ -34,7 +34,7 @@ const AddActivity = () => {
 
   // functionality for form in return statement
   function updateName(event) {
-    setActivityName(event.target.value)
+    setName(event.target.value)
   }
   function updateDescription(event) {
     setDescription(event.target.value)
@@ -47,7 +47,7 @@ const AddActivity = () => {
 
         <label>Activity Name: </label>
         <br />
-        <input onChange={updateName} value={activityName} type="text"></input>
+        <input onChange={updateName} value={name} type="text"></input>
         <br />
 
         <label>Activity Description: </label>

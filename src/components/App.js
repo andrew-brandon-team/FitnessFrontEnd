@@ -40,6 +40,7 @@ const App = () => {
         );
         const activitiesData = await response.json();
         setActivities(activitiesData)
+        // console.log(activitiesData)
         // setActivities(activitiesData.data.activities);
       } catch (error) {
         console.log(error);
@@ -58,12 +59,14 @@ const App = () => {
         }
         );
         const routinesData = await response.json();
-        setRoutines(routinesData.data.routines);
+        setRoutines(routinesData);
       } catch (error) {
         console.log(error);
       }
-      fetchRoutinesData();
+      
     }
+    fetchRoutinesData();
+
   }, [])
   return (
     <div>

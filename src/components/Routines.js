@@ -1,5 +1,5 @@
 import React from 'react';
-import { useOutletContext } from 'react-router-dom';
+import { Link, useOutletContext } from 'react-router-dom';
 
 const Routines = () => {
   const {routinesObj: [routines, setRoutines]} = useOutletContext();
@@ -10,7 +10,7 @@ const Routines = () => {
       Routines
       {
         reverseRoutines && reverseRoutines.length ? reverseRoutines.map((routine, idx) => {
-            console.log(routine)
+            // console.log(routine)
           return <div className="routine" key = {idx}>
               
               <Link to={`/routines/${routine._id}`}><span><b>{routine.name}</b></span></Link>
