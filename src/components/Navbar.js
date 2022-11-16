@@ -17,6 +17,8 @@ const Navbar = () => {
 
         {/* ternary for login/profile */}
 
+        <Link to="addRoutine">/NewRoutine/</Link>
+
       </nav>
 
     </div>

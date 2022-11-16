@@ -43,8 +43,24 @@ const App = () => {
       } catch (error) {
         console.log(error);
       }
+      fetchActivitiesData();
     }
-    fetchActivitiesData();
+    async function fetchRoutinesData() {
+      try {
+        const response = await fetch ('http://fitnesstrac-kr.herokuapp.com/api/routines', 
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+        );
+        const routinesData = await response.json();
+        setRoutines(routinesData.data.routines);
+      } catch (error) {
+        console.log(error);
+      }
+      fetchRoutinesData();
+    }
   }, [])
   return (
     <div>
