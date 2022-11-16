@@ -59,6 +59,7 @@ const App = () => {
         }
         );
         const routinesData = await response.json();
+        console.log(routinesData)
         setRoutines(routinesData);
       } catch (error) {
         console.log(error);

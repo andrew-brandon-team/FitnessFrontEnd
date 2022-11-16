@@ -17,14 +17,18 @@ const AddActivity = () => {
       const response = await fetch('https://fitnesstrac-kr.herokuapp.com/api/activities', 
       {
         method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${localStorage.getItem('token')}`
+        },
         body: JSON.stringify({
           name,
           description
         })
       });
       const data = await response.json();
-      setActivities([...activities, ])
-      if (data.success){
+      setActivities([...activities, data])
+      if (data.id){
         navigate('/activities');
       }
     } catch (error) {

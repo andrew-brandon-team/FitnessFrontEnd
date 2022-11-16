@@ -18,18 +18,23 @@ const RoutineAdd = () => {
       const response = await fetch("https://fitnesstrac-kr.herokuapp.com/api/routines", 
       {
         method: "POST",
-        body: "JSON.stringify"({
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${localStorage.getItem('token')}`
+        },
+        body: JSON.stringify({
           name,
           goal,
           isPublic
         })
       })
       const data = await response.json();
-      setRoutines([...routines.data.routines])
-      if (data.success){
-        navigate('./routines');
+      console.log(data)
+      setRoutines([...routines, data])
+      if (data.id){
+        navigate('/routines');
       }
-      console.log('createNewRoutine POST successful')
+      
     } catch (error) {
       console.log(error);
     }
