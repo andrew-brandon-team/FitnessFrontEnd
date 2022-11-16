@@ -10,7 +10,7 @@ const RoutineEdit = () => {
   async function submitRoutineEdit (event) {
     event.preventDefault();
     try {
-      const response = await fetch (`http://fitnesstrac-kr.herokuapp.com/api/routines/{props.routines._id}`, 
+      const response = await fetch (`https://fitnesstrac-kr.herokuapp.com/api/routines/{props.routines._id}`, 
       {
         method: "PATCH",
         body: JSON.stringify({

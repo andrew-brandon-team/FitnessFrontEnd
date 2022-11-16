@@ -15,7 +15,7 @@ const RoutineAdd = () => {
         alert("You must be logged in to add a new routine. If you do not have an account, proceed to the registration link on the Login page.")
         return;
       }
-      const response = await fetch("http://fitnesstrac-kr.herokuapp.com/api/routines", 
+      const response = await fetch("https://fitnesstrac-kr.herokuapp.com/api/routines", 
       {
         method: "POST",
         body: "JSON.stringify"({

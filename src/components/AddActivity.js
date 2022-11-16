@@ -14,7 +14,7 @@ const AddActivity = () => {
         alert("You must be logged in to add a new activity. If you do not have an account, proceed to the registration link on the Login page")
         return;
       }
-      const response = await fetch('http://fitnesstrac-kr.herokuapp.com/api/activities', 
+      const response = await fetch('https://fitnesstrac-kr.herokuapp.com/api/activities', 
       {
         method: "POST",
         body: JSON.stringify({

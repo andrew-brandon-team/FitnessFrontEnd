@@ -8,7 +8,7 @@ const MyRoutines = () => {
     useEffect(()=> {
       async function viewUserRoutines () {
         try {
-          const response = await fetch ('http://fitnesstrac-kr.herokuapp.com/api/users/albert/routines', 
+          const response = await fetch ('https://fitnesstrac-kr.herokuapp.com/api/users/albert/routines', 
           {
             headers: {
               'Content-Type': 'application/json',

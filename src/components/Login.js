@@ -10,7 +10,7 @@ const Login = () => {
   async function formSubmitHandler (event) {
     event.preventDefault();
     try {
-      const response = await fetch('http://fitnesstrac-kr.herokuapp.com/api/users/login', 
+      const response = await fetch('https://fitnesstrac-kr.herokuapp.com/api/users/login', 
         {
           method: "POST",
           headers: {
@@ -40,7 +40,7 @@ const Login = () => {
     if (localStorage.getItem('token')) {
       async function fetchUserData () {
           try {
-              const response = await fetch("http://fitnesstrac-kr.herokuapp.com/api/users/me", 
+              const response = await fetch("https://fitnesstrac-kr.herokuapp.com/api/users/me", 
               {
                   headers: {
                       'Content-Type': 'application/json',

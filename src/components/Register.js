@@ -9,7 +9,7 @@ const Register = () => {
   async function formSubmitHandler (event) {
     event.preventDefault();
     try {
-      const response = await fetch('http://fitnesstrac-kr.herokuapp.com/api/users/register', 
+      const response = await fetch('https://fitnesstrac-kr.herokuapp.com/api/users/register', 
         {
           method: "POST",
           headers: {
