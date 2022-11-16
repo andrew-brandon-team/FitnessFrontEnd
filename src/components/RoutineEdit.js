@@ -4,7 +4,7 @@ import { useOutletContext, useNavigate } from 'react-router-dom';
 const RoutineEdit = () => {
   const [name, setName] = useState("");
   const [goal, setGoal] = useState("");
-  const [idPublic, setIsPublic] = useState(false);
+  const [isPublic, setIsPublic] = useState(false);
   const {routinesObj: [routines, setRoutines]} = useOutletContext();
 
   async function submitRoutineEdit (event) {
@@ -38,8 +38,8 @@ const RoutineEdit = () => {
   }
 
   function editIsPublic (event) {
-    setIsPublic (event.target.value)
-    // console.log (event.target.checked)
+    setIsPublic (event.target.checked)
+    console.log (event.target.checked)
   }
 
   return (
@@ -59,6 +59,10 @@ const RoutineEdit = () => {
         </label>
         <br />
         <input onChange={editGoal} value={goal} type='text'></input>
+        <br />
+
+        <label>Make Public:</label> 
+        <input onChange={editIsPublic} value={isPublic} type="checkbox"></input>
         <br />
         
         <button type="submit">Update Routine</button>

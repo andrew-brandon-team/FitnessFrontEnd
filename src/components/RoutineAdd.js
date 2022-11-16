@@ -44,7 +44,7 @@ const RoutineAdd = () => {
     console.log(goal)
   }
   function updateIsPublic(event) {
-    setIsPublic(event.target.value)
+    setIsPublic(event.target.checked)
     console.log(isPublic)
   }
 
