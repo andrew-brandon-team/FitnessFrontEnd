@@ -3,31 +3,49 @@ import Navbar from './Navbar';
 import { Outlet } from 'react-router-dom';
 
 const App = () => {
+  const [activities, setActivities] = useState([]);
+  const [routines, setRoutines] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentProfile, setCurrentProfile] = useState({})
 
-  // useEffect(() => {
-  //   if (localStorage.getItem("token")) {
-  //     async function fetchUserData() {
-  //       try {
-  //         const response = await fetch ('https://fitnesstrac-kr.herokuapp.com/api/activities', 
-  //           {
-  //             headers: {
-  //               "Content-Type": "application/json",
-  //               Authorization: `Bearer ${localStorage.getItem("token")}`,
-  //             },
-  //           }
-  //         );
-  //         const userData = await response.json();
-  //         setCurrentProfile(userData.data)
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      async function fetchUserData() {
+        try {
+          const response = await fetch ('https://fitnesstrac-kr.herokuapp.com/api/activities', 
+            {
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${localStorage.getItem("token")}`,
+              },
+            }
+          );
+          const userData = await response.json();
+          setCurrentProfile(userData.data)
         
-  //       } catch (error) {
-  //         console.log(error);
-  //       }
-  //     }
-  //     fetchUserData();
-  //   }
-  // })
+        } catch (error) {
+          console.log(error);
+        }
+      }
+      fetchUserData();
+    }
+    async function fetchActivitiesData() {
+      try {
+        const response = await fetch ('http://fitnesstrac-kr.herokuapp.com/api/activities', 
+        {
+          headers: {'Content-Type': 'application/json',
+          },
+
+        }
+        );
+        const activitiesData = await response.json();
+        setActivities(activitiesData.data.activities);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchActivitiesData();
+  }, [])
   return (
     <div>
       <h1>
@@ -37,6 +55,8 @@ const App = () => {
       <Navbar />
 
       <Outlet context={{
+          routinesObj: [routines, setRoutines],
+          activitiesObj: [activities, setActivities],
           profileObj: [currentProfile, setCurrentProfile]
         }} />
 
