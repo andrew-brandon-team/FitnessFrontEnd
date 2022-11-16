@@ -32,6 +32,8 @@ const RoutineDelete = ({routine}) => {
         deleteThisRoutine(routine.id)}}>
         Delete Routine
       </button>
+        {/* when it is time to use this on RoutineDetails, use below: */}
+      {/* <RoutineDelete routine={routineObj} /> */}
     </div>
   )
 }
