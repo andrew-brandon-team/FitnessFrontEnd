@@ -1,5 +1,4 @@
-import React from 'react';
-import { useOutletContext } from 'react-router-dom';
+import { Link, useOutletContext } from 'react-router-dom';
 
 const Activities = () => {
   const {activitiesObj: [activities, setActivities]} = useOutletContext();
@@ -24,12 +23,16 @@ const Activities = () => {
         {/* </div> */} 
         {/* Posts, by most recent */}
     {
-        reverseActivities && reverseActivities.length ? reverseActivities.map((product, idx) => {
-                // console.log(activity.title);
-                return <div className="activity" key = {idx}>
-                    <Link to={`/activities/${activity._id}`}><span className="name-detail"><b>{activity.title}</b></span></Link>
-                    <p><span className="price-detail">{activity.price}</span></p>
+
+        reverseActivities && reverseActivities.length ? reverseActivities.map((activity, idx) => {
+
+                return <div key={idx}>
+                    
+                    <Link to={`/activities/${activity._id}`}><span><b>{activity.name}</b></span></Link>
+
+                    <p><span>{activity.description}</span></p>
                     </div>
+
                 }) : <p>No activities to display at this time</p>
         } 
     </div>

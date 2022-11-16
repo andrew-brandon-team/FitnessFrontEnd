@@ -39,15 +39,15 @@ const App = () => {
         }
         );
         const activitiesData = await response.json();
-        // console.log(activitiesData)
-        console.log('wizard of lonliness')
+        setActivities(activitiesData)
         // setActivities(activitiesData.data.activities);
       } catch (error) {
         console.log(error);
-        console.log('the real wizard of loneliness')
       }
-      fetchActivitiesData();
+      
     }
+    fetchActivitiesData();
+
     async function fetchRoutinesData() {
       try {
         const response = await fetch ('http://fitnesstrac-kr.herokuapp.com/api/routines', 
