@@ -4,7 +4,7 @@ import { useOutletContext, useParams } from 'react-router-dom';
 const RoutineDetails = () => {
   const {routinesObj: [routines, setRoutines]} = useOutletContext();
   const reverseRoutines = [...routines].reverse();
-  const {id} = useParms();
+  const {id} = useParams();
   const [routine, setRoutine] = useState();
 
   useEffect(() => {
@@ -15,7 +15,7 @@ const RoutineDetails = () => {
     setRoutine(filteredRoutines[0]);
   }, []);
 
-  
+  console.log(routine)
 
   return (
     <div>

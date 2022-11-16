@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { useOutletContext, useNavigate } from 'react-router-dom';
 
-const RoutineEdit = () => {
+const RoutineEdit = ({routine}) => {
   const [name, setName] = useState("");
   const [goal, setGoal] = useState("");
   const [isPublic, setIsPublic] = useState(false);
@@ -10,7 +10,7 @@ const RoutineEdit = () => {
   async function submitRoutineEdit (event) {
     event.preventDefault();
     try {
-      const response = await fetch (`https://fitnesstrac-kr.herokuapp.com/api/routines/{props.routines._id}`, 
+      const response = await fetch (`https://fitnesstrac-kr.herokuapp.com/api/routines/${routine.id}`, 
       {
         method: "PATCH",
         body: JSON.stringify({

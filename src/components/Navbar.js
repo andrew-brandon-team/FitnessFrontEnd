@@ -27,6 +27,8 @@ const Navbar = () => {
 
         <Link to="edit-routine">/ EditRoutine/</Link>
 
+        <Link to="my-routines">//My Routines</Link>
+
       </nav>
 
     </div>
