@@ -2,7 +2,7 @@ import React from 'react';
 import { useOutletContext } from 'react-router-dom';
 
 const Activities = () => {
-  const {activitiesObj: [activies, setActivities]} = useOutletContext();
+  const {activitiesObj: [activities, setActivities]} = useOutletContext();
   const reverseActivities = [...activities].reverse();
   return (
     <div className="products-page-container">

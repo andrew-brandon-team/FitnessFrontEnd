@@ -9,26 +9,26 @@ const App = () => {
   const [currentProfile, setCurrentProfile] = useState({})
 
   useEffect(() => {
-    if (localStorage.getItem("token")) {
-      async function fetchUserData() {
-        try {
-          const response = await fetch ('https://fitnesstrac-kr.herokuapp.com/api/activities', 
-            {
-              headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${localStorage.getItem("token")}`,
-              },
-            }
-          );
-          const userData = await response.json();
-          setCurrentProfile(userData.data)
+    // if (localStorage.getItem("token")) {
+    //   async function fetchUserData() {
+    //     try {
+    //       const response = await fetch ('https://fitnesstrac-kr.herokuapp.com/api/activities', 
+    //         {
+    //           headers: {
+    //             "Content-Type": "application/json",
+    //             Authorization: `Bearer ${localStorage.getItem("token")}`,
+    //           },
+    //         }
+    //       );
+    //       const userData = await response.json();
+    //       setCurrentProfile(userData.data)
         
-        } catch (error) {
-          console.log(error);
-        }
-      }
-      fetchUserData();
-    }
+    //     } catch (error) {
+    //       console.log(error);
+    //     }
+    //   }
+    //   fetchUserData();
+    // }
     async function fetchActivitiesData() {
       try {
         const response = await fetch ('http://fitnesstrac-kr.herokuapp.com/api/activities', 
@@ -39,9 +39,12 @@ const App = () => {
         }
         );
         const activitiesData = await response.json();
-        setActivities(activitiesData.data.activities);
+        // console.log(activitiesData)
+        console.log('wizard of lonliness')
+        // setActivities(activitiesData.data.activities);
       } catch (error) {
         console.log(error);
+        console.log('the real wizard of loneliness')
       }
       fetchActivitiesData();
     }

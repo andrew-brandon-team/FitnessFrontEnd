@@ -68,7 +68,7 @@ const RoutineAdd = () => {
         <br />
 
         <label>
-          Public routine?
+          Make Public:
         </label>
         <input onChange={updateIsPublic} value={isPublic} type="checkbox"></input>
         <br />
