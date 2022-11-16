@@ -53,8 +53,9 @@ const AddActivity = () => {
         <label>Activity Description: </label>
         <br />
         <input onChange={updateDescription} value={description} type="text"></input>
+        <br />
 
-        <button type="submit" />
+        <button type="submit">Post Activity</button>
         <br />
         <br />
 

@@ -10,6 +10,7 @@ import Register from './components/Register';
 
 import Activities from './components/Activities';
 import ActivityDetails from './components/ActivityDetails';
+import ActivityEdit from './components/ActivityEdit';
 import AddActivity from './components/AddActivity';
 
 import Routines from './components/Routines';
@@ -45,6 +46,10 @@ export const router = createBrowserRouter([
       {
         path: "activity-details",
         element: <ActivityDetails />
+      },
+      {
+        path: "edit-activity",
+        element: <ActivityEdit />
       },
       {
         path: "add-activity",
