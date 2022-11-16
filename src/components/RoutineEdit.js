@@ -39,7 +39,9 @@ const RoutineEdit = () => {
 
   function editIsPublic (event) {
     setIsPublic (event.target.checked)
-    console.log (event.target.checked)
+    console.log('isPublic:', isPublic)
+    console.log('isChecked:', event.target.checked)
+    console.log('!isChecked:', !event.target.checked)
   }
 
   return (

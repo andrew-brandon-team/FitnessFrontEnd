@@ -1,4 +1,14 @@
-* {
+body {
   color: white;
   background-color: #1e1e1e;
+}
+
+a {
+  color: white;
+}
+
+.preview-item {
+  border: 3px solid white;
+  background-color: gray;
+  margin: 15px;
 }

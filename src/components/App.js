@@ -75,12 +75,15 @@ const App = () => {
       </h1>
 
       <Navbar />
+      <br />
 
       <Outlet context={{
           routinesObj: [routines, setRoutines],
           activitiesObj: [activities, setActivities],
           profileObj: [currentProfile, setCurrentProfile]
         }} />
+
+      <br />
 
       <footer>
         Developed with love by some guys.

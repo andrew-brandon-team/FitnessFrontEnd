@@ -5,7 +5,6 @@ const Activities = () => {
   const reverseActivities = [...activities].reverse();
   return (
     <div className="products-page-container">
-        <br />
 
         {/* <div className="create-or-search">
             {/* Add New Activity */}
@@ -26,9 +25,9 @@ const Activities = () => {
 
         reverseActivities && reverseActivities.length ? reverseActivities.map((activity, idx) => {
 
-                return <div key={idx}>
+                return <div className="preview-item" key={idx}>
                     
-                    <Link to={`/activities/${activity._id}`}><span><b>{activity.name}</b></span></Link>
+                    <Link to={`/activities/${activity.id}`}><span><b>{activity.name}</b></span></Link>
 
                     <p><span>{activity.description}</span></p>
                     </div>

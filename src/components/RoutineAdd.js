@@ -45,7 +45,9 @@ const RoutineAdd = () => {
   }
   function updateIsPublic(event) {
     setIsPublic(event.target.checked)
-    console.log(isPublic)
+    console.log('isPublic:', isPublic)
+    console.log('isChecked:', event.target.checked)
+    console.log('!isChecked:', !event.target.checked)
   }
 
   return (

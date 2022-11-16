@@ -7,19 +7,18 @@ const Routines = () => {
 
   return (
     <div>
-      Routines
       {
-        reverseRoutines && reverseRoutines.length ? reverseRoutines.map((routine, idx) => {
-            // console.log(routine)
-          return <div className="routine" key = {idx}>
-              
-              <Link to={`/routines/${routine._id}`}><span><b>{routine.name}</b></span></Link>
+      reverseRoutines && reverseRoutines.length ? reverseRoutines.map((routine, idx) => {
+          // console.log(routine)
+        return <div className="preview-item" key = {idx}>
+            
+            <Link to={`/routines/${routine.id}`}><span><b>{routine.name}</b></span></Link>
 
-              <p><span>{routine.goal}</span></p>
+            <p><span>{routine.goal}</span></p>
 
-              </div>
-          }) : <p>No routines to display at this time</p>
-        } 
+            </div>
+        }) : <p>No routines to display at this time</p>
+      } 
     </div>
   )
 };
