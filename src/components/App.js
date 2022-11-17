@@ -9,26 +9,26 @@ const App = () => {
   const [currentProfile, setCurrentProfile] = useState({})
 
   useEffect(() => {
-    // if (localStorage.getItem("token")) {
-    //   async function fetchUserData() {
-    //     try {
-    //       const response = await fetch ('https://fitnesstrac-kr.herokuapp.com/api/activities', 
-    //         {
-    //           headers: {
-    //             "Content-Type": "application/json",
-    //             Authorization: `Bearer ${localStorage.getItem("token")}`,
-    //           },
-    //         }
-    //       );
-    //       const userData = await response.json();
-    //       setCurrentProfile(userData.data)
+    if (localStorage.getItem("token")) {
+      async function fetchUserData() {
+        try {
+          const response = await fetch ('https://fitnesstrac-kr.herokuapp.com/api/users/me', 
+            {
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${localStorage.getItem("token")}`,
+              },
+            }
+          );
+          const userData = await response.json();
+          setCurrentProfile(userData)
         
-    //     } catch (error) {
-    //       console.log(error);
-    //     }
-    //   }
-    //   fetchUserData();
-    // }
+        } catch (error) {
+          console.log(error);
+        }
+      }
+      fetchUserData();
+    }
     async function fetchActivitiesData() {
       try {
         const response = await fetch ('https://fitnesstrac-kr.herokuapp.com/api/activities', 

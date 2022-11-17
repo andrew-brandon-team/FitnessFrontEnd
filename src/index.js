@@ -17,6 +17,7 @@ import Routines from './components/Routines';
 import RoutineDetails from './components/RoutineDetails';
 import RoutineEdit from './components/RoutineEdit';
 import RoutineAdd from './components/RoutineAdd';
+import RoutinesMy from './components/RoutinesMy';
 
 const appElement = document.getElementById('app');
 const root = createRoot(appElement);
@@ -60,7 +61,7 @@ export const router = createBrowserRouter([
         element: <Routines />
       },
       {
-        path: "routine-details",
+        path: "routines/:id",
         element: <RoutineDetails />
       },
       {
@@ -70,6 +71,10 @@ export const router = createBrowserRouter([
       {
         path: "add-routine",
         element: <RoutineAdd />
+      },
+      {
+        path: "my-routines",
+        element: <RoutinesMy />
       }
     ]
   }
