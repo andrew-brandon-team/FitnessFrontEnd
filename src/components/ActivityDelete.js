@@ -1,12 +1,14 @@
-import { useOutletContext, useNavigate } from "react-router-dom";
+import { useOutletContext, useNavigate, useParams } from "react-router-dom";
 
 const ActivityDelete = ({activity}) => {
-  const {activtyObj: [activities, setActivities]} = useOutletContext();
-  const navigate = useNavigate;
+  const {activitiesObj: [activities, setActivities]} = useOutletContext();
+  const navigate = useNavigate();
+  const {id} = useParams();
 
-  async function deleteThisActivity (id) {
+// Removing an activity from a routine - need the routine_activity ID
+  async function deleteThisActivity () {
     try {
-      const response = await fetch (`http://fitnesstrac-kr.herokuapp.com/api/routine_activities/${activity.id}`,
+      const response = await fetch (`http://fitnesstrac-kr.herokuapp.com/api/routine_activities/${id}`,
       {
         method: "DELETE",
         headers: {
@@ -16,13 +18,21 @@ const ActivityDelete = ({activity}) => {
       })
       const deleteData = await response.json();
       console.log("This is the delete activity data", deleteData);
+      const otherResponse = await fetch ("https://fitnesstrac-kr.herokuapp.com/api/activities")
+      const newActivities = await otherResponse.json();
+      setActivities(newActivities);
+      navigate('/activities')
     } catch (error) {
       console.log(error)
     }
   }
   return (
     <div>
-      Delete Activity
+      <button onClick={(event) => {
+        event.preventDefault()
+        deleteThisActivity(id)}}>
+          Delete Activity
+        </button>
     </div>
   )
 }

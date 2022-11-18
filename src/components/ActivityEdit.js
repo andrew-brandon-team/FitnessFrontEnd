@@ -1,12 +1,15 @@
 import React, {useState, useEffect} from 'react';
-import { useParams, useOutletContext } from 'react-router-dom';
+import { useParams, useOutletContext, useNavigate } from 'react-router-dom';
+import ActivityDelete from './ActivityDelete';
 
 
 const ActivityEdit = (activity) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("")
-  const {id} = useParams();
   const {activitiesObj: [activities, setActivities]} = useOutletContext();
+  const {id} = useParams();
+  const navigate = useNavigate();
+
 
   function changeName (event) {
     setName(event.target.value)
@@ -34,6 +37,7 @@ const ActivityEdit = (activity) => {
       const otherData = await otherResponse.json();
       console.log(otherData)
       setActivities(otherData)
+      navigate('/activities')
     } catch (error) {
       console.log(error)
     }
@@ -59,6 +63,7 @@ const ActivityEdit = (activity) => {
         <button type="submit">Update Activity</button>
         <br />
         <br />
+        <ActivityDelete />
 
       </form>
     </div>
