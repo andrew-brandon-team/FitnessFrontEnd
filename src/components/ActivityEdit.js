@@ -1,9 +1,15 @@
 import React, {useState, useEffect} from 'react';
+import { useParams, useOutletContext, useNavigate } from 'react-router-dom';
+import ActivityDelete from './ActivityDelete';
 
 
 const ActivityEdit = (activity) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("")
+  const {activitiesObj: [activities, setActivities]} = useOutletContext();
+  const {id} = useParams();
+  const navigate = useNavigate();
+
 
   function changeName (event) {
     setName(event.target.value)
@@ -16,15 +22,22 @@ const ActivityEdit = (activity) => {
   async function formSubmit (event) {
     event.preventDefault()
     try {
-      const response = await fetch(`https://fitnesstrac-kr.herokuapp.com/api/activities/${activity.id}`, {
+      const response = await fetch(`https://fitnesstrac-kr.herokuapp.com/api/activities/${id}`, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
         method: "PATCH",
         body: JSON.stringify({
           name: name,
           description: description
         })
       })
-      const data = await response.json();
-      console.log("This is the data: ", data)
+      const otherResponse = await fetch("http://fitnesstrac-kr.herokuapp.com/api/activities")
+      const otherData = await otherResponse.json();
+      console.log(otherData)
+      setActivities(otherData)
+      navigate('/activities')
     } catch (error) {
       console.log(error)
     }
@@ -50,6 +63,7 @@ const ActivityEdit = (activity) => {
         <button type="submit">Update Activity</button>
         <br />
         <br />
+        <ActivityDelete />
 
       </form>
     </div>
