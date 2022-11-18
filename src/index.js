@@ -61,9 +61,15 @@ export const router = createBrowserRouter([
         element: <Routines />
       },
       {
-        path: "routine/:id",
+        path: "routines/:id",
         element: <RoutineDetails />
+
+
       },
+      // {
+      //   path: "routine/:id",
+      //   element: <RoutineDetails />
+      // },
       {
         path: "routine/:id/edit-routine",
         element: <RoutineEdit />
@@ -74,7 +80,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "my-routines",
-        element: <RoutinesMy />
+        element: <RoutinesMy />,
+      },
+      {
+        path: "my-routines/:id",
+        element: <RoutineDetails />
       }
     ]
   }

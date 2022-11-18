@@ -18,10 +18,13 @@ const ActivityDelete = ({activity}) => {
       })
       const deleteData = await response.json();
       console.log("This is the delete activity data", deleteData);
-      const otherResponse = await fetch ("https://fitnesstrac-kr.herokuapp.com/api/activities")
-      const newActivities = await otherResponse.json();
-      setActivities(newActivities);
-      navigate('/activities')
+      
+      if(deleteData.success) {
+        const otherResponse = await fetch ("https://fitnesstrac-kr.herokuapp.com/api/activities")
+        const newActivities = await otherResponse.json();
+        setActivities(newActivities);
+        // navigate('/activities')
+      }
     } catch (error) {
       console.log(error)
     }
