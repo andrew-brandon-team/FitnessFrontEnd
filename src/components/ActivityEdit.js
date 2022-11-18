@@ -1,9 +1,12 @@
 import React, {useState, useEffect} from 'react';
+import { useParams, useOutletContext } from 'react-router-dom';
 
 
 const ActivityEdit = (activity) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("")
+  const {id} = useParams();
+  const {activitiesObj: [activities, setActivities]} = useOutletContext();
 
   function changeName (event) {
     setName(event.target.value)
@@ -16,15 +19,21 @@ const ActivityEdit = (activity) => {
   async function formSubmit (event) {
     event.preventDefault()
     try {
-      const response = await fetch(`https://fitnesstrac-kr.herokuapp.com/api/activities/${activity.id}`, {
+      const response = await fetch(`https://fitnesstrac-kr.herokuapp.com/api/activities/${id}`, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
         method: "PATCH",
         body: JSON.stringify({
           name: name,
           description: description
         })
       })
-      const data = await response.json();
-      console.log("This is the data: ", data)
+      const otherResponse = await fetch("http://fitnesstrac-kr.herokuapp.com/api/activities")
+      const otherData = await otherResponse.json();
+      console.log(otherData)
+      setActivities(otherData)
     } catch (error) {
       console.log(error)
     }
