@@ -23,6 +23,7 @@ const Register = () => {
         const data = await response.json();
         console.log("This is the registration data", data)
 
+        navigate('/');
         
     } catch (error) {
       console.log(error)
@@ -54,7 +55,7 @@ const Register = () => {
           Enter Password:
         </label>
         <br />
-        <input value={password} onChange={updatePasswordState} type="text">
+        <input value={password} onChange={updatePasswordState} type="password">
         </input>
 
         <br />

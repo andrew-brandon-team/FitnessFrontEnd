@@ -23,11 +23,6 @@ const Login = () => {
         })
         const data = await response.json();
         console.log('this is the login data', data)
-        // localStorage.setItem("token", data.data.token)
-        //   navigate('/');
-
-
-        // navigate('/')
 
         if (data.token){
           localStorage.setItem("token", data.token)
@@ -84,7 +79,7 @@ const Login = () => {
           Enter Password:
         </label>
         <br />
-        <input value={password} onChange={updatePasswordState} type="text">
+        <input value={password} onChange={updatePasswordState} type="password">
         </input>
 
         <br />

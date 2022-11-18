@@ -27,7 +27,13 @@ const RoutinesMy = () => {
   }, [currentProfile])
   return (
     <div>
-      My Routines go here.
+      
+      <Link to="/add-activity"><button>Add Activity</button></Link>
+      <br />
+      <br />
+      <Link to="/add-routine"><button>Add Routine</button></Link>
+      <br />
+      <br />
 
       {
         reverseMyRoutines && reverseMyRoutines.length ? reverseMyRoutines.map((routine, idx) => {

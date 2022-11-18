@@ -15,17 +15,17 @@ const Navbar = () => {
 
         <Link to="activities">Activities</Link>
 
-        <Link to="add-activity">/ NewActivity/</Link>
+        {/* <Link to="add-activity">/ NewActivity/</Link>
 
-        <Link to="edit-activity">/ EditActivity/</Link>
+        <Link to="edit-activity">/ EditActivity/</Link> */}
         <br />
         <br />
 
         <Link to="routines">Routines</Link>
 
-        <Link to="add-routine">/ NewRoutine/</Link>
+        {/* <Link to="add-routine">/ NewRoutine/</Link>
 
-        <Link to="edit-routine">/ EditRoutine/</Link>
+        <Link to="edit-routine">/ EditRoutine/</Link> */}
 
         <Link to="my-routines">//My Routines</Link>
 

@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { useOutletContext, useParams, Link } from 'react-router-dom';
+// import DeleteRoutine from './DeleteRoutine'
 
 const RoutineDetails = () => {
   const {routinesObj: [routines, setRoutines]} = useOutletContext();
@@ -9,10 +10,11 @@ const RoutineDetails = () => {
 
   useEffect(() => {
     const filteredRoutines = routines.filter((singleRoutine) => {
-      return id === singleRoutine._id
+      return id == singleRoutine.id
     });
-    console.log(filteredRoutines);
+    console.log(filteredRoutines, filteredRoutines);
     setRoutine(filteredRoutines[0]);
+    console.log(routines)
   }, []);
 
   console.log(routine)
@@ -24,7 +26,7 @@ const RoutineDetails = () => {
         <br />
         <p>{routine.goal}</p>
       </div>
-      <Link to="routineEdit">Edit this routine</Link>
+      <Link to="edit-routine">Edit this routine</Link>
     </div>
   )
 }

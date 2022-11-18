@@ -61,11 +61,11 @@ export const router = createBrowserRouter([
         element: <Routines />
       },
       {
-        path: "routines/:id",
+        path: "routine/:id",
         element: <RoutineDetails />
       },
       {
-        path: "edit-routine",
+        path: "routine/:id/edit-routine",
         element: <RoutineEdit />
       },
       {
