@@ -1,17 +1,33 @@
 import React, {useState} from 'react';
-import { useOutletContext, useNavigate } from 'react-router-dom';
+import { useOutletContext, useParams} from 'react-router-dom';
+import RoutineDelete from './RoutineDelete';
 
-const RoutineEdit = ({routine}) => {
+const RoutineEdit = () => {
   const [name, setName] = useState("");
   const [goal, setGoal] = useState("");
   const [isPublic, setIsPublic] = useState(false);
   const {routinesObj: [routines, setRoutines]} = useOutletContext();
+  const {id} = useParams();
+
+  // useEffect(() => {
+  //   const filteredRoutines = routines.filter((singleRoutine) => {
+  //     return id == singleRoutine.id
+  //   });
+  //   console.log(filteredRoutines, filteredRoutines);
+  //   setRoutine(filteredRoutines[0]);
+  //   console.log(routines)
+  // }, []);
+
 
   async function submitRoutineEdit (event) {
     event.preventDefault();
     try {
-      const response = await fetch (`https://fitnesstrac-kr.herokuapp.com/api/routines/${routine.id}`, 
+      const response = await fetch (`https://fitnesstrac-kr.herokuapp.com/api/routines/${id}`, 
       {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
         method: "PATCH",
         body: JSON.stringify({
           name,
@@ -21,7 +37,7 @@ const RoutineEdit = ({routine}) => {
       const otherResponse = await fetch ('http://fitnesstrac-kr.herokuapp.com/api/routines')
       const otherData = await otherResponse.json();
       console.log(otherData)
-      setRoutines(otherData.data.routines);
+      setRoutines(otherData);
     } catch (error) {
       console.log(error);
     }
@@ -70,6 +86,7 @@ const RoutineEdit = ({routine}) => {
         <button type="submit">Update Routine</button>
         <br />
         <br />
+        <RoutineDelete />
 
       </form>
     </div>

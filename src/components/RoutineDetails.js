@@ -25,8 +25,10 @@ const RoutineDetails = () => {
         <p>{routine.name}</p>
         <br />
         <p>{routine.goal}</p>
+        <br />
+        <p></p>
       </div>
-      <Link to="edit-routine">Edit this routine</Link>
+      <Link to="edit-routine"><button>Edit</button></Link>
     </div>
   )
 }
