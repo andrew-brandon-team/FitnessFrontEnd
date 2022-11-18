@@ -34,7 +34,7 @@ const RoutineDetails = () => {
         return <div className="preview-item" key = {idx}>
             
             <p>{activity.name}</p>
-            <ActivityDelete />
+            <ActivityDelete activity={activity}/>
 
             {/* <p><span>{routine.goal}</span></p> */}
 
