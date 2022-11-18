@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { useOutletContext, useParams, Link } from 'react-router-dom';
+import ActivityDelete from './ActivityDelete';
 // import DeleteRoutine from './DeleteRoutine'
 
 const RoutineDetails = () => {
@@ -26,7 +27,21 @@ const RoutineDetails = () => {
         <br />
         <p>{routine.goal}</p>
         <br />
-        <p></p>
+
+        {
+        routine.activities && routine.activities.length ? routine.activities.map((activity, idx) => {
+          // console.log(routine)
+        return <div className="preview-item" key = {idx}>
+            
+            <p>{activity.name}</p>
+            <ActivityDelete activity={activity}/>
+
+            {/* <p><span>{routine.goal}</span></p> */}
+
+            </div>
+        }) : <p>No activities are attached to this routine yet!</p>
+      } 
+
       </div>
       <Link to="edit-routine"><button>Edit</button></Link>
     </div>

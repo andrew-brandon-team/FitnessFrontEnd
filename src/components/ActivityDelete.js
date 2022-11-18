@@ -8,7 +8,7 @@ const ActivityDelete = ({activity}) => {
 // Removing an activity from a routine - need the routine_activity ID
   async function deleteThisActivity () {
     try {
-      const response = await fetch (`http://fitnesstrac-kr.herokuapp.com/api/routine_activities/${id}`,
+      const response = await fetch (`http://fitnesstrac-kr.herokuapp.com/api/routine_activities/${activity.routineActivityId}`,
       {
         method: "DELETE",
         headers: {
