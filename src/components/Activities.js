@@ -27,7 +27,7 @@ const Activities = () => {
 
                 return <div className="preview-item" key={idx}>
                     
-                    <Link to={`/activities/${activity.id}`}><span><b>{activity.name}</b></span></Link>
+                    <Link to={`/activity/${activity.id}`}><span><b>{activity.name}</b></span></Link>
 
                     <p><span>{activity.description}</span></p>
                     </div>

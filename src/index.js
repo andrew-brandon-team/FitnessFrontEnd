@@ -45,11 +45,11 @@ export const router = createBrowserRouter([
         element: <Activities />
       },
       {
-        path: "activity-details",
+        path: "activity/:id",
         element: <ActivityDetails />
       },
       {
-        path: "edit-activity",
+        path: "activity/:id/edit-activity",
         element: <ActivityEdit />
       },
       {

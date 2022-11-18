@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react';
-import { useOutletContext, useParams } from 'react-router-dom';
+import { useOutletContext, useParams, Link } from 'react-router-dom';
 
 const RoutineDetails = () => {
   const {routinesObj: [routines, setRoutines]} = useOutletContext();
   const reverseRoutines = [...routines].reverse();
   const {id} = useParams();
-  const [routine, setRoutine] = useState();
+  const [routine, setRoutine] = useState({});
 
   useEffect(() => {
     const filteredRoutines = routines.filter((singleRoutine) => {
