@@ -1,41 +1,51 @@
 import React, {useState, useEffect} from 'react';
-import {useOutletContext, useParams} from 'react-router-dom';
-// import DeleteActivity from './DeleteActivity';
+import {useOutletContext, useParams, Link} from 'react-router-dom';
+// import DeleteActivity from './DeleteActivity'
+
 
 const ActivityDetails = () => {
-  const {activitiesObj: [activies, setActivities]} = useOutletContext;
+  const {activitiesObj: [activities, setActivities]} = useOutletContext();
   const {profileObj: [currentProfile, setCurrentProfile]} = useOutletContext();
   const [toggleEdit, setToggleEdit] = useState(false);
   const {id} = useParams();
-  const reverseActivities = [...activies].reverse();
-  const [acitvity, setActivity] = useState({});
+  const reverseActivities = [...activities].reverse();
+  const [activity, setActivity] = useState({});
 
   useEffect(() => {
-    const filteredActivities = activities.filter((singleActivity) => {
-      return id === singleActivity._id;
-    });
-    setActivity(filteredActivities[0]);
-  }, []);
+    if (activities.length) {
+      const filteredActivities = activities.filter((singleActivity) => {
+        return id == singleActivity.id;
+      });
+      console.log('filtered', filteredActivities)
+      setActivity(filteredActivities[0]);
+      console.log(activities)
+    }
+  }, [activities]);
 
   function changeToggleEdit() {
     toggleEdit ? setToggleEdit(false) : setToggleEdit(true);
   }
 
-  if (acitvity._id) {
+  console.log(activity)
+  // console.log(activity.name)
+
+  if (activity.id) {
     return (
       <div>
         <div>
-          <p>{acitvity.name}</p>
+          <p>{activity.name}</p>
+          
           <br />
           <p>
-            {acitvity.description}
+            {activity.description}
           </p>
         </div>
 
         <div>
-          <button onClick={changeToggleEdit} className="details-bttn">
+          <Link to="edit-activity">
+            <button onClick={changeToggleEdit} className="details-bttn">
             Edit
-          </button>
+          </button></Link>
 
           {/* {toggleEdit ? <EditActivity product={product} /> : null} */}
         {/* <button>Delete</button> */}
