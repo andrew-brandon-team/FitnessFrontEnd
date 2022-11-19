@@ -40,7 +40,7 @@ const RoutinesMy = () => {
           // console.log();
           return (
             <div key={routine.id}>
-              <Link to="{`/routines/${routine.id}`}">{routine.name}</Link>
+              <Link to={`/routines/${routine.id}`}>{routine.name}</Link>
               <p>{routine.goal}</p>
 
               
