@@ -22,7 +22,7 @@ const RoutineDetails = () => {
 
   return (
     <div>
-        <div>
+      <div>
         <p>{routine.name}</p>
         <br />
         <p>{routine.goal}</p>
@@ -39,8 +39,7 @@ const RoutineDetails = () => {
             {/* <p><span>{routine.goal}</span></p> */}
 
             </div>
-        }) 
-        : <p>No activities are attached to this routine yet!</p>
+        }) : <p>No activities are attached to this routine yet!</p>
       } 
 
       </div>
