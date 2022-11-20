@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { useOutletContext, useParams, Link } from 'react-router-dom';
 import ActivityDelete from './ActivityDelete';
+import RoutineDelete from './RoutineDelete';
 // import DeleteRoutine from './DeleteRoutine'
 
 const RoutineDetails = () => {
@@ -44,6 +45,7 @@ const RoutineDetails = () => {
 
       </div>
       <Link to="edit-routine"><button>Edit</button></Link>
+      <RoutineDelete />
     </div>
   )
 }

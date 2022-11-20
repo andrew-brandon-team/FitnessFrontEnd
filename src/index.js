@@ -71,7 +71,11 @@ export const router = createBrowserRouter([
       //   element: <RoutineDetails />
       // },
       {
-        path: "routine/:id/edit-routine",
+        path: "routines/:id/edit-routine",
+        element: <RoutineEdit />
+      },
+      {
+        path: "my-routines/:id/edit-routine",
         element: <RoutineEdit />
       },
       {
@@ -86,6 +90,10 @@ export const router = createBrowserRouter([
         path: "my-routines/:id",
         element: <RoutineDetails />
       }
+      // {
+      //   path: "delete-routine",
+      //   element: <RoutineDelete />
+      // }
     ]
   }
 ])

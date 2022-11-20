@@ -7,7 +7,7 @@ const App = () => {
   const [routines, setRoutines] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentProfile, setCurrentProfile] = useState({})
-
+  console.log(currentProfile)
   useEffect(() => {
     if (localStorage.getItem("token")) {
       async function fetchUserData() {
