@@ -22,8 +22,6 @@ const Register = () => {
         })
         const data = await response.json();
         console.log("This is the registration data", data)
-
-        navigate('/');
         
     } catch (error) {
       console.log(error)
