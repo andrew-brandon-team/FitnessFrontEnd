@@ -61,7 +61,7 @@ export const router = createBrowserRouter([
         element: <Routines />
       },
       {
-        path: "routine/:id",
+        path: "routines/:id",
         element: <RoutineDetails />
       },
       {

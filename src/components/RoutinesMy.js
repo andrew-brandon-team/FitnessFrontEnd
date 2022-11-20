@@ -37,15 +37,12 @@ const RoutinesMy = () => {
 
       {
         reverseMyRoutines && reverseMyRoutines.length ? reverseMyRoutines.map((routine, idx) => {
-          // console.log();
+          console.log(typeof routine.id);
           return (
             <div key={routine.id}>
               <Link to={`${routine.id}`}>{routine.name}</Link>
-              <p>{routine.goal}</p>
-
-              
+              <p>{routine.goal}</p>              
             </div>
-            
           ) 
         }) : <p>No products to display at this time</p>
         }
