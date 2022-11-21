@@ -28,12 +28,15 @@ const RoutinesMy = () => {
   }, [currentProfile])
   return (
     <div>
-      <div className="product-title">My Routines</div>
+      <div className="product-title">{currentProfile.username}'s Profile</div>
+      <br />
       <div className='add-activity'>
       <Link to="/add-activity"><button>Add Activity</button></Link>
       <Link to="/add-routine"><button>Add Routine</button></Link>
       <Logout />
       </div>
+      <br />
+      <div className="product-title">My Routines</div>
       {
         reverseMyRoutines && reverseMyRoutines.length ? reverseMyRoutines.map((routine, idx) => {
           console.log(typeof routine.id);

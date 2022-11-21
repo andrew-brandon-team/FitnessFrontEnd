@@ -62,30 +62,35 @@ const RoutineEdit = () => {
 
   return (
     <div>
-      RoutineEdit Form:
+      <span className="product-title">Routine Edit Form</span>
       <form onSubmit={submitRoutineEdit}>
-        <label>
-          Routine Name:
-        </label>
-        <br />
-        <input onChange={editName} value={name} type='text'>
-        </input>
-        <br />
+        <div>
+          <label>
+            Routine Name:
+          </label>
+          <br />
+          <input onChange={editName} value={name} type='text'>
+          </input>
+        </div>
 
-        <label>
-          Goal:
-        </label>
-        <br />
-        <input onChange={editGoal} value={goal} type='text'></input>
-        <br />
 
-        <label>Make Public:</label> 
-        <input onChange={editIsPublic} value={isPublic} type="checkbox"></input>
-        <br />
-        
-        <button type="submit">Update Routine</button>
-        <br />
-        <br />
+        <div>
+          <label>
+            Goal:
+          </label>
+          <br />
+          <input onChange={editGoal} value={goal} type='text'></input>
+        </div>
+
+        <div>
+          <label>Make Public:</label> 
+          <input onChange={editIsPublic} value={isPublic} type="checkbox"></input>
+
+        </div>
+
+
+        <button type="submit">Update</button>
+
         <RoutineDelete />
 
       </form>

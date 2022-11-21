@@ -55,6 +55,7 @@ h1 {
 }
 
 footer {
+  color: #ceae83;
   margin-top: 20px;
   background-color: #4f3f33;
   padding: 10px;
@@ -74,6 +75,26 @@ footer {
 .preview-item {
   background-color: #71241f;
   border: 4px solid white;
+}
+
+.details-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 250px;
+  border: 5px solid white;
+  border-radius: 5px;
+  background-color: #c49f3d;
+  margin: auto;
+}
+
+.details-name {
+  font-size: large;
+  text-align: center;
+}
+
+.details-more {
+  text-align: center;
 }
 
 .logout-bttn {
