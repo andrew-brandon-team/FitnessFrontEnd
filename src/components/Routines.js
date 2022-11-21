@@ -33,7 +33,7 @@ const Routines = () => {
             
             <Link to={`/routines/${routine.id}`}><span><b>{routine.name}</b></span></Link>
 
-            <p><span>{routine.goal}</span></p>
+            {/* <p><span>{routine.goal}</span></p> */}
 
             </div>
         }) : <p>No routines to display at this time</p>

@@ -108,6 +108,7 @@ footer {
 
 .preview-item a {
   font-family: 'Oswald';
+  text-decoration: none;
 }
 
 .details-container {
@@ -248,4 +249,29 @@ footer {
   height: 125px;
   justify-content: space-evenly;
   border-radius: 8px;
+}
+
+.zero-color a {
+  font-family: 'Oswald';
+  text-decoration: none;
+}
+
+.one-color a {
+  font-family: 'Oswald';
+  text-decoration: none;
+}
+
+.two-color a {
+  font-family: 'Oswald';
+  text-decoration: none;
+}
+
+.three-color a {
+  font-family: 'Oswald';
+  text-decoration: none;
+}
+
+.four-color a {
+  font-family: 'Oswald';
+  text-decoration: none;
 }

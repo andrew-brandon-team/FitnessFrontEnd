@@ -34,7 +34,7 @@ const Activities = () => {
                         
                         <Link to={`/activity/${activity.id}`}><span><b>{activity.name}</b></span></Link>
 
-                        <p><span>{activity.description}</span></p>
+                        {/* <p><span>{activity.description}</span></p> */}
                         </div>
 
                     }) : <p>No activities to display at this time</p>
