@@ -64,3 +64,36 @@ h3 {
 footer {
   text-align: center;
 }
+
+.add-activity {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border: 3px solid white;
+  background-color: gray;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  padding: .5%;
+  width: 250px;
+  height: 175px;
+  justify-content: space-evenly;
+  border-radius: 8px;
+}
+
+.my-routines {
+  display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border: 3px solid white;
+    background-color: gray;
+    text-align: center;
+    padding: .5%;
+    width: 250px;
+    height: 125px;
+    justify-content: space-evenly;
+    border-radius: 8px;
+    margin-top: 1%;
+    margin-right: auto;
+    margin-left: auto;
+}
