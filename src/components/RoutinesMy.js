@@ -27,6 +27,7 @@ const RoutinesMy = () => {
   }, [currentProfile])
   return (
     <div>
+      <div className="product-title">My Routines</div>
       <div className='add-activity'>
       <Link to="/add-activity"><button>Add Activity</button></Link>
       <br />
