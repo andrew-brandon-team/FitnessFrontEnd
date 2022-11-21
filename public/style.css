@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
 body {
   color: white;
   background-color: #1e1e1e;
@@ -5,10 +7,6 @@ body {
 
 a {
   color: white;
-}
-
-h1 {
-  text-align: center;
 }
 
 .products-page-container {
