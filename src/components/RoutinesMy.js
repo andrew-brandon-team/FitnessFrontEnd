@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react';
 import { useOutletContext, Link } from 'react-router-dom';
+import Logout from './Logout';
 
 const RoutinesMy = () => {
   const [myRoutines, setMyRoutines] = useState([]);
@@ -30,11 +31,8 @@ const RoutinesMy = () => {
       <div className="product-title">My Routines</div>
       <div className='add-activity'>
       <Link to="/add-activity"><button>Add Activity</button></Link>
-      <br />
-      <br />
       <Link to="/add-routine"><button>Add Routine</button></Link>
-      <br />
-      <br />
+      <Logout />
       </div>
       {
         reverseMyRoutines && reverseMyRoutines.length ? reverseMyRoutines.map((routine, idx) => {

@@ -7,7 +7,7 @@ const App = () => {
   const [routines, setRoutines] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentProfile, setCurrentProfile] = useState({})
-  console.log(currentProfile)
+
   useEffect(() => {
     if (localStorage.getItem("token")) {
       async function fetchUserData() {
@@ -59,7 +59,6 @@ const App = () => {
         }
         );
         const routinesData = await response.json();
-        console.log(routinesData)
         setRoutines(routinesData);
       } catch (error) {
         console.log(error);
@@ -68,10 +67,19 @@ const App = () => {
     }
     fetchRoutinesData();
 
-  }, [])
+  }, []);
+
+
+  useEffect(() => {
+    if (currentProfile.id) {
+      setIsLoggedIn(true);
+    }
+  }, [currentProfile])
+
   return (
     <div>
-      <Navbar />
+      <Navbar 
+        isLoggedIn={isLoggedIn}/>
       <h1>
         Fitness Tracker
       </h1>
@@ -81,7 +89,8 @@ const App = () => {
       <Outlet context={{
           routinesObj: [routines, setRoutines],
           activitiesObj: [activities, setActivities],
-          profileObj: [currentProfile, setCurrentProfile]
+          profileObj: [currentProfile, setCurrentProfile],
+          loggedInObj: [isLoggedIn, setIsLoggedIn]
         }} />
 
       <br />
