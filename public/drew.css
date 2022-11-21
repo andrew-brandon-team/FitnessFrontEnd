@@ -22,7 +22,8 @@ nav {
 
 nav a {
   color: white;
-  text-decoration: none;;
+  text-decoration: none;
+  font-family: 'Anton';
 }
 
 .top-white-stripe {
@@ -38,6 +39,20 @@ h1 {
   margin-right: -10px;
   margin-top: -10px;
   padding: 5px;
+}
+
+h1 {
+  font-family: 'Anton';
+  font-weight: normal;
+  font-size: xx-large;
+  -webkit-text-stroke: 1px white;
+  -webkit-text-fill-color: #71241f;
+  text-align: center;
+}
+
+h1 span {
+  -webkit-text-stroke: 1px black;
+  -webkit-text-fill-color: white;
 }
 
 .home-img-container {
@@ -68,6 +83,7 @@ footer {
 }
 
 .product-title {
+  font-family: 'Anton';
   text-align: center;
   font-size: xx-large;
   padding-bottom: 5px;

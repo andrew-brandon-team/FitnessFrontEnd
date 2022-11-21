@@ -82,7 +82,7 @@ const App = () => {
         isLoggedIn={isLoggedIn}/>
       <div className="top-white-stripe">&nbsp;</div>
       <h1>
-        Fitness Tracker
+        Fitness <span>Tracker</span>
       </h1>
       
       <br />
