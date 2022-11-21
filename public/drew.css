@@ -152,3 +152,93 @@ footer {
 .my-routines {
   width: 400px;
 }
+
+.zero-color {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border: 3px solid white;
+  background-color: #71241f;
+  margin: 15px;
+  text-align: center;
+  padding: .5%;
+  width: 250px;
+  height: 125px;
+  justify-content: space-evenly;
+  border-radius: 8px;
+}
+
+.one-color {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border: 3px solid white;
+  background-color: #4f3f33;
+  margin: 15px;
+  text-align: center;
+  padding: .5%;
+  width: 250px;
+  height: 125px;
+  justify-content: space-evenly;
+  border-radius: 8px;
+}
+
+.two-color {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border: 3px solid white;
+  background-color: gray;
+  margin: 15px;
+  text-align: center;
+  padding: .5%;
+  width: 250px;
+  height: 125px;
+  justify-content: space-evenly;
+  border-radius: 8px;
+}
+
+.three-color {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border: 3px solid white;
+  background-color: #c49f3d;
+  margin: 15px;
+  text-align: center;
+  padding: .5%;
+  width: 250px;
+  height: 125px;
+  justify-content: space-evenly;
+  border-radius: 8px;
+}
+
+.four-color {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border: 3px solid white;
+  background-color: #ceae83;
+  margin: 15px;
+  text-align: center;
+  padding: .5%;
+  width: 250px;
+  height: 125px;
+  justify-content: space-evenly;
+  border-radius: 8px;
+}
+
+.default-color {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border: 3px solid white;
+  background-color: #c49f3d;
+  margin: 15px;
+  text-align: center;
+  padding: .5%;
+  width: 250px;
+  height: 125px;
+  justify-content: space-evenly;
+  border-radius: 8px;
+}
