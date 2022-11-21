@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {useOutletContext, useParams, Link} from 'react-router-dom';
+import {FcSportsMode} from 'react-icons/fc'
 // import DeleteActivity from './DeleteActivity'
 
 
@@ -33,6 +34,7 @@ const ActivityDetails = () => {
     return (
       <div>
         <div className="details-container">
+          <p className="details-logo"><FcSportsMode /></p>
           <p className="details-name">Name: {activity.name}</p>
           
           <br />

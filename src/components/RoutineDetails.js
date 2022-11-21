@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { useOutletContext, useParams, Link } from 'react-router-dom';
 import ActivityDelete from './ActivityDelete';
 import RoutineDelete from './RoutineDelete';
+import {BiTimer} from 'react-icons/bi'
 // import DeleteRoutine from './DeleteRoutine'
 
 const RoutineDetails = () => {
@@ -24,11 +25,12 @@ const RoutineDetails = () => {
   return (
     <div>
       <div className="details-container">
-        <p className="details-name">Routine Name: {routine.name}</p>
+        <p className="details-logo"><BiTimer /></p>
+        <p className="details-name">Routine: {routine.name}</p>
         <br />
-        <p className="details-more">Routine Goal: {routine.goal}</p>
+        <p className="details-more">Goal: {routine.goal}</p>
         <br />
-
+        <p className="details-more">Activities:</p>
         {
         routine.activities && routine.activities.length ? routine.activities.map((activity, idx) => {
           // console.log(routine)

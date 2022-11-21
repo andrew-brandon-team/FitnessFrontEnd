@@ -39,7 +39,7 @@ const RoutinesMy = () => {
       <div className="product-title">My Routines</div>
       {
         reverseMyRoutines && reverseMyRoutines.length ? reverseMyRoutines.map((routine, idx) => {
-          console.log(typeof routine.id);
+          // console.log(typeof routine.id);
           return (
             <div className='my-routines' key={routine.id}>
               <Link to={`${routine.id}`}>{routine.name}</Link>
