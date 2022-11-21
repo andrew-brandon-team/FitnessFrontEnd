@@ -61,6 +61,8 @@ footer {
   padding: 10px;
   min-width: 250px;  
   max-width: 300px;
+  border-top: 3px solid #ceae83;
+  border-bottom: 3px solid #4f3421;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;;
 }
