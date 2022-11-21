@@ -6,8 +6,12 @@
   align-items: center;
 
 } */
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 body {
+  font-family: 'Lato';
   color: white;
   background-color: #cfd0c1;
 }
@@ -95,15 +99,24 @@ footer {
   border: 4px solid white;
 }
 
+.preview-item a {
+  font-family: 'Oswald';
+}
+
 .details-container {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: 250px;
+  width: 350px;
   border: 5px solid white;
   border-radius: 5px;
-  background-color: #c49f3d;
+  background-color: #1a1d26;
   margin: auto;
+}
+
+.details-logo {
+  font-size: xx-large;
+  text-align: center;
 }
 
 .details-name {
@@ -134,4 +147,8 @@ footer {
 .form-bttn{
   width: 100px;
   margin: auto;
+}
+
+.my-routines {
+  width: 400px;
 }
