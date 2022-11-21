@@ -136,6 +136,11 @@ footer {
   text-align: center;
 }
 
+.routine-activities-container {
+  display: flex;
+  align-content: center;
+}
+
 .logout-bttn {
   color: white;
   background-color: rgb(177, 7, 7);
@@ -155,6 +160,12 @@ footer {
 .form-bttn{
   width: 100px;
   margin: auto;
+}
+
+.red-bttn {
+  background-color: rgb(177, 7, 7);
+  color: white;
+  border: 2px solid white;
 }
 
 .my-routines {
@@ -274,4 +285,10 @@ footer {
 .four-color a {
   font-family: 'Oswald';
   text-decoration: none;
+}
+
+.preview-item-name {
+  font-family: 'Oswald';
+  text-decoration: none;
+  font-size: x-large;
 }

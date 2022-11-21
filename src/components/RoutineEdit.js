@@ -62,14 +62,16 @@ const RoutineEdit = () => {
 
   return (
     <div>
-      <span className="product-title">Routine Edit Form</span>
+      {/* <span className="product-title">Routine Edit Form</span> */}
       <form onSubmit={submitRoutineEdit}>
         <div>
+          <br />
+          <br />
           <label>
             Routine Name:
           </label>
           <br />
-          <input onChange={editName} value={name} type='text'>
+          <input className="form-field" onChange={editName} value={name} type='text'>
           </input>
         </div>
 
@@ -79,7 +81,7 @@ const RoutineEdit = () => {
             Goal:
           </label>
           <br />
-          <input onChange={editGoal} value={goal} type='text'></input>
+          <input className="form-field" onChange={editGoal} value={goal} type='text'></input>
         </div>
 
         <div>
@@ -89,7 +91,7 @@ const RoutineEdit = () => {
         </div>
 
 
-        <button type="submit">Update</button>
+        <button className="form-bttn" type="submit">Update</button>
 
         <RoutineDelete />
 

@@ -44,25 +44,25 @@ const ActivityEdit = (activity) => {
   }
   return (
     <div>
-      Activity Edit Form:
+      {/* Activity Edit Form: */}
       <form onSubmit={formSubmit}>
+        <br />
+        <br />
         <label>
           Activity Name:
         </label>
-        <br />
-        <input onChange={changeName} value={name} type='text'>
+
+        <input className="form-field" onChange={changeName} value={name} type='text'>
         </input>
-        <br />
 
         <label>
           Description:
         </label>
-        <br />
-        <input onChange={changeDescription} value={description} type='text'>
+
+        <input className="form-field" onChange={changeDescription} value={description} type='text'>
         </input>
-        <button type="submit">Update Activity</button>
-        <br />
-        <br />
+        <button className="form-bttn" type="submit">Update Activity</button>
+
         <ActivityDelete />
 
       </form>

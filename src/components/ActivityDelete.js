@@ -31,7 +31,7 @@ const ActivityDelete = ({activity}) => {
   }
   return (
     <div>
-      <button onClick={(event) => {
+      <button className="red-bttn" onClick={(event) => {
         event.preventDefault()
         deleteThisActivity(id)}}>
           Delete Activity
