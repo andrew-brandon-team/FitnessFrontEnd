@@ -1,11 +1,12 @@
 import { Link, useOutletContext } from 'react-router-dom';
+import {FcSportsMode} from 'react-icons/fc'
 
 const Activities = () => {
   const {activitiesObj: [activities, setActivities]} = useOutletContext();
   const reverseActivities = [...activities].reverse();
   return (
     <div>
-        <div className="product-title">Activities</div>
+        <div className="product-title"> <FcSportsMode /> Activities <FcSportsMode /> </div>
         <div className="products-page-container">
 
 
