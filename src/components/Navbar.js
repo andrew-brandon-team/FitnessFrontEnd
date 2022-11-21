@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({isLoggedIn}) => {
   return (
     <div>
 
@@ -9,21 +9,16 @@ const Navbar = () => {
 
         <Link to="/">Home</Link>
 
-        <Link to="login">Login</Link>
-
         <Link to="activities">Activities</Link>
-
-        {/* <Link to="add-activity">/ NewActivity/</Link>
-
-        <Link to="edit-activity">/ EditActivity/</Link> */}
 
         <Link to="routines">Routines</Link>
 
-        {/* <Link to="add-routine">/ NewRoutine/</Link>
-
-        <Link to="edit-routine">/ EditRoutine/</Link> */}
-
-        <Link to="my-routines">My Routines</Link>
+        {
+          isLoggedIn ? 
+          (<Link to="my-routines">My Routines</Link>)
+          :
+          (<Link to="login">Login</Link>)
+        }
 
       </nav>
 
