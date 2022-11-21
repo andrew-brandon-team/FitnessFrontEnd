@@ -138,7 +138,21 @@ footer {
 
 .routine-activities-container {
   display: flex;
+  flex-direction: column;
   align-content: center;
+  justify-content: center;
+  overflow-wrap: normal;
+  overflow: hidden;
+  overflow: scroll;
+}
+
+.routine-activities-container::-webkit-scrollbar {
+  display: none;
+}
+
+.routine-activity {
+  margin: auto;
+  margin-bottom: 10px;
 }
 
 .logout-bttn {

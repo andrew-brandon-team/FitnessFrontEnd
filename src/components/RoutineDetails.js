@@ -35,7 +35,7 @@ const RoutineDetails = () => {
           {
             routine.activities && routine.activities.length ? routine.activities.map((activity, idx) => {
               // console.log(routine)
-            return <div className="preview-item" key = {idx}>
+            return <div className="preview-item routine-activity" key = {idx}>
                 
                 <p className="details-more">{activity.name}</p>
                 <ActivityDelete activity={activity}/>
