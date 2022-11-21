@@ -71,7 +71,8 @@ const App = () => {
 
 
   useEffect(() => {
-    if (currentProfile.id) {
+    if (currentProfile?.id) {
+      console.log('why me')
       setIsLoggedIn(true);
     }
   }, [currentProfile])
