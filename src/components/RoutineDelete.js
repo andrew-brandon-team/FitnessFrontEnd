@@ -28,7 +28,7 @@ const RoutineDelete = ({routine}) => {
 
   return (
     <div className="details-more">
-      <button onClick={(event) => {
+      <button className="red-bttn" onClick={(event) => {
         event.preventDefault()
         deleteThisRoutine(id)}}>
         Delete Routine

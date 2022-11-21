@@ -31,19 +31,22 @@ const RoutineDetails = () => {
         <p className="details-more">Goal: {routine.goal}</p>
         <br />
         <p className="details-more">Activities:</p>
-        {
-        routine.activities && routine.activities.length ? routine.activities.map((activity, idx) => {
-          // console.log(routine)
-        return <div className="preview-item" key = {idx}>
-            
-            <p className="details-more">{activity.name}</p>
-            <ActivityDelete activity={activity}/>
+        <div className="routine-activities-container">
+          {
+            routine.activities && routine.activities.length ? routine.activities.map((activity, idx) => {
+              // console.log(routine)
+            return <div className="preview-item" key = {idx}>
+                
+                <p className="details-more">{activity.name}</p>
+                <ActivityDelete activity={activity}/>
 
-            {/* <p><span>{routine.goal}</span></p> */}
+                {/* <p><span>{routine.goal}</span></p> */}
 
-            </div>
-        }) : <p className="details-more">No activities are attached to this routine yet!</p>
-      } 
+                </div>
+            }) : <p className="details-more">No activities are attached to this routine yet!</p>
+          } 
+        </div>
+
       <Link className="details-more" to="edit-routine"><button>Edit</button></Link>
       <br />
       <RoutineDelete />

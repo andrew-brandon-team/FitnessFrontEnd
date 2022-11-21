@@ -42,8 +42,8 @@ const RoutinesMy = () => {
           // console.log(typeof routine.id);
           return (
             <div className='my-routines' key={routine.id}>
-              <Link to={`${routine.id}`}>{routine.name}</Link>
-              <p>{routine.goal}</p>              
+              <Link className="preview-item-name" to={`${routine.id}`}>{routine.name}</Link>
+              {/* <p>{routine.goal}</p>               */}
             </div>
           ) 
         }) : <p>No routines to display at this time</p>
