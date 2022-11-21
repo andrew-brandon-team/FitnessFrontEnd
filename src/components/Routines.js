@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useOutletContext} from 'react-router-dom';
+import {BiTimer} from 'react-icons/bi'
 
 const Routines = () => {
   const {routinesObj: [routines, setRoutines]} = useOutletContext();
@@ -7,7 +8,7 @@ const Routines = () => {
 
   return (
     <div>
-      <div className="product-title">Routines</div>
+      <div className="product-title"><BiTimer /> Routines <BiTimer /></div>
       <div className="products-page-container">
       {
       reverseRoutines && reverseRoutines.length ? reverseRoutines.map((routine, idx) => {

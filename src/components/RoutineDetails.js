@@ -23,10 +23,10 @@ const RoutineDetails = () => {
 
   return (
     <div>
-      <div>
-        <p>{routine.name}</p>
+      <div className="details-container">
+        <p className="details-name">Routine Name: {routine.name}</p>
         <br />
-        <p>{routine.goal}</p>
+        <p className="details-more">Routine Goal: {routine.goal}</p>
         <br />
 
         {
@@ -34,18 +34,20 @@ const RoutineDetails = () => {
           // console.log(routine)
         return <div className="preview-item" key = {idx}>
             
-            <p>{activity.name}</p>
+            <p className="details-more">{activity.name}</p>
             <ActivityDelete activity={activity}/>
 
             {/* <p><span>{routine.goal}</span></p> */}
 
             </div>
-        }) : <p>No activities are attached to this routine yet!</p>
+        }) : <p className="details-more">No activities are attached to this routine yet!</p>
       } 
-
-      </div>
-      <Link to="edit-routine"><button>Edit</button></Link>
+      <Link className="details-more" to="edit-routine"><button>Edit</button></Link>
+      <br />
       <RoutineDelete />
+      <br />
+      </div>
+
     </div>
   )
 }

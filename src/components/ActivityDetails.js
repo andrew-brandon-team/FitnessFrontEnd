@@ -32,20 +32,23 @@ const ActivityDetails = () => {
   if (activity.id) {
     return (
       <div>
-        <div>
-          <p>{activity.name}</p>
+        <div className="details-container">
+          <p className="details-name">Name: {activity.name}</p>
           
           <br />
-          <p>
+          <p className="details-more">Description: 
             {activity.description}
           </p>
-        </div>
 
-        <div>
-          <Link to="edit-activity">
+          <Link className="details-more" to="edit-activity">
             <button onClick={changeToggleEdit} className="details-bttn">
             Edit
           </button></Link>
+          <br />
+        </div>
+
+        <div>
+
 
           {/* {toggleEdit ? <EditActivity product={product} /> : null} */}
         {/* <button>Delete</button> */}
