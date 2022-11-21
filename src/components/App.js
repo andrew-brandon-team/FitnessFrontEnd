@@ -80,6 +80,7 @@ const App = () => {
     <div>
       <Navbar 
         isLoggedIn={isLoggedIn}/>
+      <div className="top-white-stripe">&nbsp;</div>
       <h1>
         Fitness Tracker
       </h1>
