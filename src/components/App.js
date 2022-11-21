@@ -86,9 +86,7 @@ const App = () => {
 
       <br />
 
-      <footer>
-        Developed with love by some guys.
-      </footer>
+
     </div>
   )
 }

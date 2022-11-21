@@ -6,7 +6,9 @@ const Routines = () => {
   const reverseRoutines = [...routines].reverse();
 
   return (
-    <div className="products-page-container">
+    <div>
+      <div className="product-title">Routines</div>
+      <div className="products-page-container">
       {
       reverseRoutines && reverseRoutines.length ? reverseRoutines.map((routine, idx) => {
           // console.log(routine)
@@ -20,6 +22,8 @@ const Routines = () => {
         }) : <p>No routines to display at this time</p>
       } 
     </div>
+    </div>
+
   )
 };
 
