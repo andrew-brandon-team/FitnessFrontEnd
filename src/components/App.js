@@ -71,11 +71,11 @@ const App = () => {
   }, [])
   return (
     <div>
+      <Navbar />
       <h1>
         Fitness Tracker
       </h1>
-
-      <Navbar />
+      
       <br />
 
       <Outlet context={{

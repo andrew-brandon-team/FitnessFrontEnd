@@ -6,7 +6,7 @@ const Routines = () => {
   const reverseRoutines = [...routines].reverse();
 
   return (
-    <div>
+    <div className="products-page-container">
       {
       reverseRoutines && reverseRoutines.length ? reverseRoutines.map((routine, idx) => {
           // console.log(routine)
