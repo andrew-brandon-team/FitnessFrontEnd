@@ -62,14 +62,14 @@ const Login = () => {
   }
   return (
     <div>
-      <h3>Login Form</h3>
-      <form onSubmit={formSubmitHandler}>
+      <h3 className="product-title">Login Form</h3>
+      <form className="form-container" onSubmit={formSubmitHandler}>
 
         <label>
           Enter Username:
         </label>
         <br />
-        <input value={username} onChange={updateUserNameState} type="text">
+        <input className="form-field" value={username} onChange={updateUserNameState} type="text">
         </input>
 
         <br />
@@ -77,11 +77,11 @@ const Login = () => {
           Enter Password:
         </label>
         <br />
-        <input value={password} onChange={updatePasswordState} type="password">
+        <input className="form-field" value={password} onChange={updatePasswordState} type="password">
         </input>
 
         <br />
-        <button type="submit">Login</button>
+        <button className="form-bttn" type="submit">Login</button>
         <br />
 
         <br />

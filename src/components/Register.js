@@ -41,14 +41,14 @@ const Register = () => {
   }
   return (
     <div>
-      <h3>Registration Form</h3>
-      <form onSubmit={formSubmitHandler}>
+      <h3 className="product-title">Registration Form</h3>
+      <form clasName="form-container" onSubmit={formSubmitHandler}>
 
         <label>
           Enter New Username:
         </label>
         <br />
-        <input value={username} onChange={updateUserNameState} type="text">
+        <input className="form-field" value={username} onChange={updateUserNameState} type="text">
         </input>
 
         <br />
@@ -56,11 +56,11 @@ const Register = () => {
           Enter Password:
         </label>
         <br />
-        <input value={password} onChange={updatePasswordState} type="password">
+        <input className="form-field" value={password} onChange={updatePasswordState} type="password">
         </input>
 
         <br />
-        <button type="submit">Register</button>
+        <button className="form-bttn" type="submit">Register</button>
         <br />
         <br />
 
