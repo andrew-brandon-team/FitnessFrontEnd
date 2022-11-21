@@ -76,6 +76,7 @@ h1 span {
 footer {
   color: #ceae83;
   margin-top: 20px;
+  background-image: linear-gradient(to right, #4f3f33,#68563f, #352214,#4f3f33,#68563f,#4f3421,#562807,#4f3f33, #68563f, #4f3f33);
   background-color: #4f3f33;
   padding: 10px;
   min-width: 250px;  

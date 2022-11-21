@@ -26,30 +26,34 @@ const Login = () => {
 
         if (data.token){
           localStorage.setItem("token", data.token)
-          navigate('/');
+          
+          // navigate('/');
       }
 
     } catch (error) {
       console.log(error)
     }
-    if (localStorage.getItem('token')) {
+    const tokenz = localStorage.getItem('token')
+    if (tokenz) {
       async function fetchUserData () {
           try {
               const response = await fetch("https://fitnesstrac-kr.herokuapp.com/api/users/me", 
               {
                   headers: {
                       'Content-Type': 'application/json',
-                      'Authorization': `Bearer ${localStorage.getItem('token')}`
+                      'Authorization': `Bearer ${tokenz}`
                   },
               })
               const userData = await response.json();
-              setCurrentProfile(userData.data)
+              setCurrentProfile(userData.user)
+              navigate('/')
               // console.log(currentProfile)
               // console.log(userData)
           } catch (error) {
               console.log(error)
           }
       }
+      console.log('this is working now')
       fetchUserData();
   }
   }
